@@ -48,6 +48,13 @@ public class MainFrame extends JFrame implements NavegacaoListener {
         JMenuItem itemInicio = new JMenuItem("Início");
 
         itemInicio.addActionListener(e -> mostrarPainel("inicial"));
+        itemVeiculos.addActionListener(e -> {
+            // Verifica se o painel de veículos já existe
+            if (!paineis.containsKey("veiculos")) {
+                adicionarPainel("veiculos", new PainelVeiculos(this));
+            }
+            mostrarPainel("veiculos");
+        });
         // Os outros itens podem ser conectados a outros painéis futuramente
 
         menu.add(itemInicio);

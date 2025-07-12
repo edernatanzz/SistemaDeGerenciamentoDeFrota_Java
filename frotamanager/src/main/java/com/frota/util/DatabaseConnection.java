@@ -3,14 +3,13 @@ package com.frota.util;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.Properties;
 
 import javax.naming.NamingException;
 
 public class DatabaseConnection {
     
     // Configurações do banco
-    private static final String URL = "jdbc:mysql://localhost:3306/frotaDB";
+    private static final String URL = "jdbc:mysql://localhost:3308/frotaDB";
     private static final String USERNAME = "myuser";
     private static final String PASSWORD = "1234";
     
