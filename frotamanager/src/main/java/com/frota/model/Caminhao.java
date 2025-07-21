@@ -1,12 +1,17 @@
 package com.frota.model;
 
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+
 import com.frota.model.enums.StatusVeiculo;
 
 /**
  * Classe que representa um caminhão da frota.
  * Herda de Veiculo e implementa Rastreavel.
  */
-public class Caminhao extends Veiculo implements Rastreavel, Manutencivel {
+@Entity
+public class Caminhao extends Veiculo implements Rastreavel, Manutencivel, Serializable {
     private int numeroEixos;
     private double capacidadeCarga;
     private double comprimento;
@@ -75,6 +80,10 @@ public class Caminhao extends Veiculo implements Rastreavel, Manutencivel {
 
     public void setStatus(StatusVeiculo status) {
         this.status = status;
+    }
+
+    public java.time.LocalDate getDataUltimaManutencao() {
+        return dataUltimaManutencao;
     }
 
     @Override

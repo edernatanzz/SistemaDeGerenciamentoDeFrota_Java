@@ -1,10 +1,15 @@
 package com.frota.model;
 
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+
 /**
  * Classe abstrata que representa um veículo genérico da frota.
  * Define atributos básicos e obriga a implementação do cálculo de custo de manutenção.
  */
-public abstract class Veiculo {
+@Entity
+public abstract class Veiculo implements Serializable {
     private int id;
     private String placa;
     private String marca;
