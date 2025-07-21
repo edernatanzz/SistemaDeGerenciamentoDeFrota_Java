@@ -1,4 +1,4 @@
-package com.frota.dao;
+package com.frota.infrastructure.persistence;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -9,11 +9,12 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.frota.infrastructure.database.DatabaseConnection;
 import com.frota.model.Caminhao;
 import com.frota.model.enums.StatusVeiculo;
-import com.frota.util.DatabaseConnection;
+import com.frota.repository.VeiculoDAO;
 
-public class CaminhaoDAOImpl implements CaminhaoDAO {
+public class CaminhaoDAOImpl implements VeiculoDAO<Caminhao> {
     private DatabaseConnection databaseConnection;
     
     public CaminhaoDAOImpl() {

@@ -1,10 +1,11 @@
 package com.frota.service;
 
-import com.frota.dao.CarroDAOImpl;
-import com.frota.dao.VanDAOImpl;
-import com.frota.dao.CaminhaoDAOImpl;
 import com.frota.model.Carro;
 import com.frota.model.Van;
+import com.frota.repository.VeiculoDAO;
+import com.frota.infrastructure.persistence.CaminhaoDAOImpl;
+import com.frota.infrastructure.persistence.CarroDAOImpl;
+import com.frota.infrastructure.persistence.VanDAOImpl;
 import com.frota.model.Caminhao;
 import java.util.List;
 
@@ -12,9 +13,9 @@ import java.util.List;
  * Serviço para gerenciar veículos
  */
 public class VeiculoService {
-    private final CarroDAOImpl carroDAO;
-    private final VanDAOImpl vanDAO;
-    private final CaminhaoDAOImpl caminhaoDAO;
+    private final VeiculoDAO<Carro> carroDAO;
+    private final VeiculoDAO<Van> vanDAO;
+    private final VeiculoDAO<Caminhao> caminhaoDAO;
 
     public VeiculoService() {
         this.carroDAO = new CarroDAOImpl();

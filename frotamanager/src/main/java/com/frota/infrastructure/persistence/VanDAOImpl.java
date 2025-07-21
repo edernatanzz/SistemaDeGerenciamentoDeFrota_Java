@@ -1,4 +1,4 @@
-package com.frota.dao;
+package com.frota.infrastructure.persistence;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,10 +8,11 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.frota.infrastructure.database.DatabaseConnection;
 import com.frota.model.Van;
-import com.frota.util.DatabaseConnection;
+import com.frota.repository.VeiculoDAO;
 
-public class VanDAOImpl implements VanDAO {
+public class VanDAOImpl implements VeiculoDAO<Van> {
     private DatabaseConnection databaseConnection;
 
     public VanDAOImpl() {
